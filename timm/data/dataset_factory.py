@@ -4,13 +4,19 @@ from .dataset import IterableImageDataset, ImageDataset
 
 
 def _search_split(root, split):
+    # import pdb
+    # pdb.set_trace()
     # look for sub-folder with name of split in root and use that if it exists
     split_name = split.split('[')[0]
     try_root = os.path.join(root, split_name)
     if os.path.exists(try_root):
         return try_root
     if split_name == 'validation':
-        try_root = os.path.join(root, 'val')
+        try_root = os.path.join(root, 'val') # just for imagenet folder
+        if os.path.exists(try_root):
+            return try_root
+    elif split_name == 'test':
+        try_root = os.path.join(root, 'test') # it can easy handle to your tasks.
         if os.path.exists(try_root):
             return try_root
     return root

@@ -1,0 +1,1 @@
+python infer_for_aliproduct.py /workspace/mnt/storage/kanghaidong/action_detect_data/data/test --model tf_efficientnet_b7_ns --checkpoint output/train/20210606-002007-tf_efficientnet_b7_ns-224/checkpoint-7.pth.tar --num-classes 50030 --img-size 256 -b 32 --num-gpu 2 --topk 1

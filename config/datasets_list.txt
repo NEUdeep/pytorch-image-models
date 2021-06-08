@@ -1,0 +1,2 @@
+foggy :/workspace/mnt/storage/kanghaidong/FM_wubao_Data/foggy/data_v2_train+test
+iimagenet2012 :/workspace/mnt/storage/yankai/imagenet/ImageNet-pytorch 

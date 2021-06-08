@@ -101,6 +101,7 @@ def main():
     topk_ids = []
     with torch.no_grad():
         for batch_idx, (input, _) in enumerate(loader):
+            import pdb;pdb.set_trace()
             input = input.cuda()
             labels = model(input)
             topk = labels.topk(k)[1]
