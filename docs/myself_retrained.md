@@ -87,6 +87,7 @@ Train: 2 [ 150/5004 (  3%)]  Loss:  5.261723 (5.1119)  Time: 0.453s,  564.86/s  
 
 
 ## tf_efficientnet_b7_ns with pretrained -  top-1(85.0(epoch=196) in AliProducts; have 50030 classes)
+- 200epoch cost three weeks trained in nvidia2080ti(8X).
 `AliProducts is large datasets for cvpr2021 competition of tianchi;dital you can found "https://tianchi.aliyun.com/competition/entrance/531884/information"`
 `python -m torch.distributed.launch --nproc_per_node=8 train.py /workspace/mnt/storage/kanghaidong/action_detect_data/data/AliProducts --model tf_efficientnet_b7_ns --img-size 224 -b 16 --sched cosine --epochs 300 --lr 1e-3 --warmup-lr 5e-3 --train_split 'train' --val_split 'val' --num-classes 50030`
 
