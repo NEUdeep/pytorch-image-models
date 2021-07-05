@@ -81,7 +81,7 @@ parser.add_argument('--val_split', metavar='NAME', default='validation',
                     help='dataset validation split (default: validation)')
 parser.add_argument('--model', default='resnet101', type=str, metavar='MODEL',
                     help='Name of model to train (default: "countception"')
-parser.add_argument('--pretrained', action='store_true', default=True,
+parser.add_argument('--pretrained', action='store_true', default=False,
                     help='Start with pretrained version of specified network (if avail)')
 parser.add_argument('--initial-checkpoint', default='', type=str, metavar='PATH',
                     help='Initialize model from this checkpoint (default: none)')
