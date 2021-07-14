@@ -95,7 +95,15 @@ log you can found[tf_efficientnet_b7_ns](output/train/20210608-165417-tf_efficie
 [args](output/train/20210608-165417-tf_efficientnet_b7_ns-224/args.yaml)
 
 
-## resnet18 -  top-1(69.0(epoch=) in imagenet1k; have 1k classes)
+## resnet18 -  top-1(68.70(epoch=282) in imagenet1k; have 1k classes)
+- 1epoch cost 3minute trained in nvidia6000(8X).
+`python -m torch.distributed.launch --nproc_per_node=8 train.py /workspace/mnt/storage/yankai/imagenet/ImageNet-pytorch --model resnet18 --img-size 224 -b 128 --sched cosine --epochs 300 --lr 1e-2 --warmup-lr 5e-2 --train_split 'train' --val_split 'val' --num-classes 1000`
+
+log you can found[resnet18](output/train/20210707-094750-resnet18-224/summary.csv)
+[args](output/train/20210707-094750-resnet18-224/args.yaml)
+
+
+## resnet50 -  top-1(74.82599997802734(epoch=338) in imagenet1k; have 1k classes)
 - 1epoch cost 3minute trained in nvidia6000(8X).
 `python -m torch.distributed.launch --nproc_per_node=8 train.py /workspace/mnt/storage/yankai/imagenet/ImageNet-pytorch --model resnet18 --img-size 224 -b 128 --sched cosine --epochs 300 --lr 1e-2 --warmup-lr 5e-2 --train_split 'train' --val_split 'val' --num-classes 1000`
 
