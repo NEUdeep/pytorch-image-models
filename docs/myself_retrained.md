@@ -109,3 +109,13 @@ log you can found[resnet18](output/train/20210707-094750-resnet18-224/summary.cs
 
 log you can found[resnet18](output/train/20210707-094750-resnet18-224/summary.csv)
 [args](output/train/20210707-094750-resnet18-224/args.yaml)
+
+
+## vit_deit_tiny_patch16_224 -  top-1(61.7880(epoch=325) in imagenet1k; have 1k classes)
+- 1epoch cost 3minute trained in nvidia6000(8X).
+`python -m torch.distributed.launch --nproc_per_node=8 train.py /workspace/mnt/storage/yankai/imagenet/ImageNet-pytorch --model vit_deit_tiny_patch16_224 --img-size 224 -b 64 --sched cosine --epochs 350 --lr 1e-2 --warmup-lr 5e-2 --train_split 'train' --val_split 'val' --num-classes 1000`
+
+log you can found[vit_deit_tiny_patch16_224](output/train/20210714-101934-vit_deit_tiny_patch16_224-224/summary.csv)
+[args](output/train/20210714-101934-vit_deit_tiny_patch16_224-224/args.yaml)
+
+but the paper is `80.1`; so param is not right. may be it same with vit, and you should check is with distoration.
